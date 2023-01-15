@@ -19,9 +19,9 @@ Cryptographic javascript-functions for ethereum and tutorials on how to use them
 
   In this tutorial we will sign data in javascript and validate the signature inside of a smart-contract.
 
-- **[Sending encrypted and signed data to other identites](./tutorials/encrypted-message.md)**  
+- **[Sending encrypted and signed data to other identities](./tutorials/encrypted-message.md)**  
 
-  In this tutorial we will use the ethereum-identites and asymmetric cryptography to send an encrypted and signed message from Alice to Bob.
+  In this tutorial we will use the ethereum-identities and asymmetric cryptography to send an encrypted and signed message from Alice to Bob.
 
 ## Sponsored by
 
@@ -85,7 +85,7 @@ Creates a new ethereum-identity with privateKey, publicKey and address as hex-st
   } */
 ```
 
-You can also create an identity by providing your own entropy-buffer. Use this with caution, a bad entropy can result in an unsecure private key.
+You can also create an identity by providing your own entropy-buffer. Use this with caution, a bad entropy can result in an insecure private key.
 
 ```javascript
   const entropy = Buffer.from('f2dacf...', 'utf-8'); // must contain at least 128 chars
@@ -268,7 +268,7 @@ const receipt = await web3.eth.sendSignedTransaction(signedTx);
 
 ### txDataByCompiled()
 
-Creates the data-string which must be submitted with an transaction to create a contract-instance.
+Creates the data-string which must be submitted with a transaction to create a contract-instance.
 
 ```javascript
 const SolidityCli = require('solidity-cli');
@@ -322,7 +322,7 @@ console.log(receipt.contractAddress === calculatedAddress);
 
 ### hex compress/decompress
 
-"Compress" or "decompress" a hex-string to make it smaller. You can either compress to utf16 which reduces the size to about 1/4, or to base64 which reduces the size to about 4/5. This is not a real compression, it just make your string smaller when you have to store it in utf-16 anyways.
+"Compress" or "decompress" a hex-string to make it smaller. You can either compress to utf16 which reduces the size to about 1/4, or to base64 which reduces the size to about 4/5. This is not a real compression, it just makes your string smaller when you have to store it in utf-16 anyways.
 
 ```javascript
 const hexString = '0x107be946709e41b7895eea9f2dacf998a0a9124acbb786f0fd1a826101581a07'; // 66 chars
